@@ -1,0 +1,52 @@
+*** Aula 25 ****
+
+//Entrada de dados Java
+// Comando utilizado
+
+Scanner sc = new Scanner(System.in)
+
+// A classe deve conter no inicio a seguinte linha
+
+Import Java.util.Scanner;
+
+// A classe também deve conter a seguinte linha no final,
+//quando não precisar mais do objeto sc
+
+sc.close()
+
+* Suponha que uma variavel tipo string é declarada
+
+String x;
+
+x = sc.next();    -> para caracteres 
+x = sc.nextInt(); -> para numeros inteiros
+
+
+** Exemplo
+
+Import Java.util.Scanner;
+
+public class Exercicio1 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		String x;
+		x = sc.next();
+		System.out.println("Voce digitou: " + x)
+		
+		sc.close();
+		} 
+	}
+		
+		
+		
+		
+
+
+
+
+
+
+

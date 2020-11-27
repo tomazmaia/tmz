@@ -1,0 +1,402 @@
+**EXERCICIO SOBRE ESTRUTURA DE CONDICIONAL (IF-ELSE)
+
+
+///EXEMPLO 01:
+* Fazer um programa para ler um numero inteiro, e depois dizer se este número
+é negativo ou não.
+
+Entrada: -10	Saída: NEGATIVO
+Entrada: 8		Saída: NÃO NEGATIVO
+Entrada: 0		Saída: NÃO NEGATIVO
+
+***SOLUÇÂO ***
+
+import java.util.Scanner;
+
+public class Exercicio2 {
+
+	public static void main(String[] args) {
+	
+	Scanner sc = new Scanner(System.in);
+	int x;
+	x = sc.nextInt();
+		
+	if (x < 0) {
+		System.out.println("NEGATIVO");}
+	else  {
+		System.out.println("NÃO NEGATIVO");}
+	
+	sc.close();
+	}
+}
+
+///EXEMPLO 02:
+* Fazer um programa para ler um numero inteiro e dizer se este número é PAR
+ou IMPAR.
+Entrada: 12		Saída: PAR
+Entrada: -27	Saída: IMPAR
+Entrada: 0		Saída: PAR
+
+***SOLUÇÂO ***
+
+import java.util.Scanner;
+
+public class exemplo2 {
+
+	public static void main(String[] args) {
+	
+	Scanner sc = new Scanner(System.in);
+	int x;
+	x = sc.nextInt();
+	
+	if(x % 2 == 0) {
+		System.out.println("PAR");}
+	else {
+		System.out.println("IMPAR");}
+	
+	sc.close();
+	}
+}
+
+///EXEMPLO 3:
+* Leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem
+"São multiplos" ou "Não são multiplos", indicando se os valores lidos são multiplos
+entre si. Atenção: Os numeros devem poder ser digitados em ordem crescente ou 
+decrescente.
+
+Entrada: 6 e 24		Saída: SAO MULTIPLOS
+Entrada: 6 e 25		Saída: NAO SAO MULTIPLOS
+Entrada: 24 e 6		Saída: SAO MULTIPLOS
+
+***SOLUÇÂO ***
+
+import java.util.Scanner;
+
+public class Exemplo3 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int A = sc.nextInt();
+		int B = sc.nextInt();
+		
+		if (A % B == 0 || B % A == 0) {
+			System.out.println("Sao Multiplos");
+		}
+		else {
+			System.out.println("Nao sao Multiplos");
+		}
+		
+		sc.close();
+	}
+}
+
+/// EXEMPLO 4:
+*Leia a hora inicial e a hora final de um jogo. A seguir calcule a duração
+do jogo, sabendo que o mesmo pode começar em um dia e terminar em outro,
+tendo uma duração mínima de 1 hora e máxima de 24 horas.
+
+Entrada: 16 e 2		Saída: O JOGO DUROU 10 HORA(S)
+Entrada: 0 e 0		Saída: O JOGO DUROU 24 HORA(S)
+Entrada: 2 e 16		Saída: O JOGO DUROU 14 HORA(S)
+
+***SOLUÇÂO ***
+
+
+public class Exemplo4 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		int horaInicial = sc.nextInt();
+		int horaFinal = sc.nextInt();
+		int duracao;
+		
+		if(horaInicial < horaFinal) {
+			duracao = horaFinal - horaInicial;
+		}
+		else {
+			duracao = 24 - horaInicial + horaFinal;
+		}
+		
+		System.out.println("O JOGO DUROU " + duracao + " HORA(S)");
+		
+		sc.close();
+		
+		}
+		
+	}
+		
+/// EXEMPLO 5:		
+
+* Com base na tabela abaixo, escreva um programa que leia o código de um item e a 
+quantidade deste item. A seguir, calcule e mostre o valor da conta a pagar.
+
+CODIGO
+1	Cachorro quente		RS 4.00
+2	X Salada			R$ 4.50
+3	X Bacon				R$ 5.00
+4	Torrada simples		R$ 2.00
+5	Refrigerante		R$ 1.50
+
+*** SOLUÇÂO ***
+
+import java.util.Scanner;
+
+public class Exemplo5 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int codigo = sc.nextInt();
+		int quantidade = sc.nextInt();
+		double total;
+		
+		if(codigo == 1) {
+			total = quantidade * 4.0;
+		}
+		else if(codigo == 2) {
+			total = quantidade * 4.5;
+		}
+		else if(codigo == 3) {
+			total = quantidade * 5.0;
+		}
+		else if(codigo == 4) {
+			total = quantidade * 2.0;
+		}
+		else {
+			total = quantidade * 1.5;
+		}
+		System.out.printf("Total: R$ %.2f%n", total);
+		
+		sc.close();
+	}
+}
+	
+/// EXEMPLO 6:		
+
+* Voce deve fazer um programa que leia um valor qualquer e apresente uma mensagem
+dizendo em qual dos seguintes intervalos ([0,25],(25,50],(50,75],(75,100]) este
+valor se encontra. Obviamente se o valor não estiver em nenhum destes intervalos,
+deverá ser impressa a mensagem "Fora de intervalo".
+
+Entrada: 25.01		Saída: Intervalo (25,50]
+Entrada: 25.00		Saída: Intervalo [0,25]
+Entrada: 100.00		Saída: Intervalo (75,100]
+Entrada: -25.02		Saída: Fora de intervalo
+
+*** SOLUÇÂO ***
+import java.util.Scanner;
+
+public class Exemplo6 {
+
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		double valor = sc.nextDouble();
+		
+		if(valor < 0.0 || valor > 100.00) {
+			System.out.println("Fora de intervalo");
+		}
+		else if (valor <= 25.0) {
+			System.out.println("Intervalo [0,25]");
+		}
+		else if (valor <= 50.0) {
+			System.out.println("Intervalo [25,50]");
+		}
+		else if (valor <= 75.0) {
+			System.out.println("Intervalo [50,75]");
+		}
+		else {
+			System.out.println("Intervalo [75,100]");
+		}
+		sc.close();
+	}
+}
+
+/// EXEMPLO 7:	
+* Leia 2 valores com uma casa decimal (x e y), que devem representar as coordenadas
+de um ponto em um plano. A seguir, determine qual o quadrante ao qual pertence ordem
+ponto, ou se está sobre um dos eixos  cartesianos ou na origem (x = y = 0).
+Se o ponto estiver na origem, escreva a mensagem "Origem".
+Se o ponto estiver sobre um dos eixos escreva "Eixo X" ou "Eixo Y", conforme for a
+situação.
+
+Entrada: 4.5 e -2.2		Saída: Q4
+Entrada: 0.1 e 0.1		Saída: Q1
+Entrada: 0.0 e 0.0		Saída: Origem
+
+*** SOLUÇÂO ****
+
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class exemplo7 {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		double x = sc.nextDouble();
+		double y = sc.nextDouble();
+		
+		if (x == 0.0 && y == 0.0) {
+			System.out.println("Origem");
+		}
+		else if (x == 0.0) {
+			System.out.println("Eixo Y");
+		}
+		else if (y == 0.0) {
+			System.out.println("Eixo X");
+		}
+		else if (x > 0.0 && y > 0.0) {
+			System.out.println("Q1");
+		}
+		else if (x < 0.0 && y > 0.0) {
+			System.out.println("Q2");
+		}
+		else if (x < 0.0 && y < 0.0) {
+			System.out.println("Q3");
+		}
+		else {
+			System.out.println("Q4");
+		}
+		
+		sc.close();
+	}
+}
+		
+
+/// EXEMPLO 8:
+*Leia um valor com duas casas decimais, equivalente ao salário de uma pessoa. Em
+seguida, calcule e mostre o valor que esta pessoa deve de imposto de renda, segundo
+a tabela abaixo:
+
+Renda							Imposto
+de R$0.0 a R$2.000				Isento
+de R$2.000 até R$3.000,00		8%
+de R$3.000,01 até R$4.500,00	18%
+acima de R$4.500,00				28%
+
+Lembre que, se o salário for R$3.002,00, a taxa que incide é de 8% apenas sobre 
+R$1.000,00, pois a faixa de salário que fica de R$0,00 até R$2.000,00 é isenta de 
+imposto de renda. No exemplo fornecido abaixo, a taxa é de 8% sobre R$1.000,00
++ 18% sobre R$2,00, o que resulta em  R$80,36 no total. O valor deve ser impresso
+com duas casas decimais.
+
+Exemplos:
+
+Entrada: 3002,00	Saída: R$80,36 
+Entrada: 1701,12	Saída: Isento
+Entrada: 4520,00	Saída: R$355,60
+
+*** SOLUÇÂO MINHA ***
+
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Exemplo8 {
+
+	public static void main(String[] args) {
+					
+			Scanner sc = new Scanner(System.in);
+			Locale.setDefault(Locale.US);
+			
+			double salario = sc.nextDouble();
+			double imposto8 = 0;
+			double imposto18 = 0;
+			double imposto28 = 0;
+			double x = 2000.00;
+			double y = 3000.00;
+			double z = 4500.00;
+			double imposto;
+			
+			if(salario < 2000.00) {
+				System.out.println("Isento");
+				}
+			else if(salario > 2000.00 && salario < 3000.00) {
+				imposto8 = (x - salario) * 8 / 100;
+				imposto = imposto8;
+				System.out.printf("Valor do imposto: ", imposto);
+				}
+			else if(salario > 3000.00 && salario < 4500.00) {
+				imposto18 = (y - salario) * 18 / 100;
+				imposto = imposto8 + imposto18;
+				System.out.printf("Valor do imposto: ", imposto);
+				}
+			else {
+				imposto28 = (z - salario) * 28 / 100;
+				imposto = imposto8 + imposto18 + imposto28;
+				System.out.printf("Valor do imposto: ", imposto);
+				}
+						
+			sc.close();
+	}
+
+}
+
+*** SOLUÇÂO CORRETA ****
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Exemplo8 {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		double salario = sc.nextDouble();
+		
+		double imposto;
+		if (salario <= 2000.0) {
+			imposto = 0.0;
+		}
+		else if (salario <= 3000.0) {
+			imposto = (salario - 2000.0) * 0.08;
+		}
+		else if (salario <= 4500.0) {
+			imposto = (salario - 3000.0) * 0.18 + 1000.0 * 0.08;
+		}
+		else {
+			imposto = (salario - 4500.0) * 0.28 + 1500.0 * 0.18 + 1000.0 * 0.08;
+		}
+
+		if (imposto == 0.0) {
+			System.out.println("Isento");
+		}
+		else {
+			System.out.printf("R$ %.2f%n", imposto);
+		}
+		
+		sc.close();
+	}
+}
+
+
+
+
+
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+
+
+
